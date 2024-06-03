@@ -106,9 +106,9 @@ class PNRComponent extends React.Component {
     } = this.state;
 
     return (
-      <div className="min-h-screen font-thin flex flex-col items-center justify-center bg-black p-4 sm:p-8">
-        <div className="bg-black border-2 border-red-500 shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-lg transform transition-all hover:shadow-2xl hover:scale-105">
-          <h2 className="text-2xl  mb-6 text-center text-white animate-fadeIn">Enter Your PNR Number</h2>
+      <div className="min-h-screen font-bold flex flex-col items-center justify-center bg-white p-4 sm:p-8">
+        <div className="bg-white border-2 border-red-500 shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-lg transform transition-all hover:shadow-2xl hover:scale-105">
+          <h2 className="text-2xl  mb-6 text-center text-back animate-fadeIn">Enter Your PNR Number</h2>
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mb-6 animate-slideUp">
             <input
               type="text"
@@ -116,24 +116,24 @@ class PNRComponent extends React.Component {
               name="pnr"
               value={this.state.PNRNumber}
               onChange={this.handleChange}
-              className="border border-gray-300 rounded-md p-2 flex-grow focus:outline-none focus:ring-2 focus:ring-red-600 transition duration-300"
+              className="border border-back rounded-md p-2 flex-grow focus:outline-none focus:ring-2 focus:ring-red-600 transition duration-300"
             />
             <button
               type="submit"
               onClick={this.handleSubmit}
-              className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-black hover:text-red-600 border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-900 transition duration-300"
+              className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-white hover:text-red-600 border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-900 transition duration-300"
             >
              <b>Search</b>
             </button>
             
            
           </div>
-          <h2 className="text-1xl mb-6 text-center text-white animate-fadeIn">OR</h2>
+          <h2 className="text-1xl mb-6 text-center text-back animate-fadeIn">OR</h2>
 
           <button
               type="button"
               onClick={this.handleManualEntry}
-              className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-black hover:text-red-600 border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-900 transition duration-300"
+              className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-white hover:text-red-600 border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-900 transition duration-300"
             >
               <b>Enter City Manually</b>
             </button>

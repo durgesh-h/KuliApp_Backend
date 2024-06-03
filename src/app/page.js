@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
      {/* <NavbarDemo/> */}
-    <div className=' bg-slate-400 text-center'>
+    <div className=' bg-blue-400 text-center'>
       {/* <h1>This is Homepage</h1> */}
       <Navbar/>
       <PNRComponent/>

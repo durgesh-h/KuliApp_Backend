@@ -1,5 +1,8 @@
 // Footer.jsx
 import React from "react";
+import logo from '../../assets/kulilogo.png'
+import Image from "next/image";
+
 import {
   FaFacebookF,
   FaTwitter,
@@ -8,9 +11,10 @@ import {
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 const Footer = () => {
   return (
-    <footer className="bg-black font-thin text-md text-white p-10 text-sm">
+    <footer className="bg-back font-bold text-md text-white p-10 text-sm">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Company Info */}
         <div className="flex flex-col space-y-4 items-center ">
@@ -75,12 +79,12 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded bg-black border-2 border-red-700 text-black"
+              className="p-2 rounded bg-back border-2 border-white text-white"
             />
             <div className="flex justify-center sm:justify-start">
               <button
                 type="submit"
-                className="bg-red-600 hover:bg-black w-24 text-white hover:text-red-500 hover:border-2 hover:border-red-700 p-2 rounded-2xl"
+                className="bg-red-600 hover:bg-white w-24 text-white hover:text-red-500 hover:border-2 hover:border-red-700 p-2 rounded-2xl"
               >
                 Submit
               </button>
@@ -95,20 +99,25 @@ const Footer = () => {
        <ul className="flex flex-row justify-center">
         <li>
         <a
-          href="https://dgfolio.vercel.app"
+          href="https://skillancer.in"
           target="blank"
           className="hover:text-white"
         >
-          Skillancer 
+       <Image src={logo} alt="Logo" width={100} height={100}   />
         </a>
         </li>
         <li>
+          <p>
+            &
+          </p>
+        </li>
+        <li>
         <a
-          href="https://dgfolio.vercel.app"
+          href="https://durgeshprasad.co"
           target="blank"
           className="hover:text-white"
         >
-          Skillancer 
+       <Image src={logo} alt="Logo" width={100} height={100}   />
         </a>
         </li>
        </ul>
