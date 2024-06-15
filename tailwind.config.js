@@ -14,7 +14,7 @@ module.exports = {
       },
 
       colors: {
-        back: "#4c6fbf",
+        back: "#000",
       },
     },
   },

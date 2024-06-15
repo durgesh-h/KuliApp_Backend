@@ -1,6 +1,8 @@
 // Footer.jsx
 import React from "react";
 import logo from '../../assets/kulilogo.png'
+import dglogo from '../../assets/dglogo.png'
+import skill from '../../assets/skillancer_logo.png'
 import Image from "next/image";
 
 import {
@@ -14,11 +16,11 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 const Footer = () => {
   return (
-    <footer className="bg-back font-bold text-md text-white p-10 text-sm">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-back text-md text-white p-10 text-sm">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
         {/* Company Info */}
         <div className="flex flex-col space-y-4 items-center ">
-          <h2 className="text-red-500 text-lg font-extrabold">Social Media</h2>
+          <h2 className="text-white text-md font-extrabold">Social Media</h2>
           <div className="md:flex  sm:space-x-4 space-x-0 space-y-4 md:space-y-0 ">
             <FaFacebookF className="hover:text-red-500 transition-all duration-300" />
             <FaInstagram className="hover:text-red-500 transition-all duration-300" />
@@ -41,8 +43,8 @@ const Footer = () => {
 
         {/* Links */}
         <div className="space-y-4 ">
-          <h3 className="text-red-500 text-lg font-extrabold">Need Help</h3>
-          <ul className="space-y-2">
+          <h3 className="text-white text-md font-extrabold">Need Help</h3>
+          <ul className="space-y-2 ">
             
             <li>
               <a href="/AboutUs" className="hover:text-gray-300">
@@ -56,6 +58,11 @@ const Footer = () => {
             </li>
             <li>
               <a href="/Projects" className="hover:text-gray-300">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/Projects" className="hover:text-gray-300">
                 FAQ's
               </a>
             </li>
@@ -64,15 +71,15 @@ const Footer = () => {
 
         {/* Services */}
         <div className="space-y-4">
-          <h3 className="text-red-500 text-lg font-extrabold">Location</h3>
+          <h3 className="text-white text-md font-extrabold">Location</h3>
           <ul className="space-y-2">
             <p>Pryagraj, UP</p>{" "}
           </ul>
         </div>
 
         {/* Newsletter */}
-        <div className="space-y-4">
-          <h3 className="text-red-500 text-lg font-extrabold">
+        <div className="space-y-0">
+          <h3 className="text-white text-md font-extrabold">
             Subscribe to our Newsletter
           </h3>
           <form className="flex flex-col space-y-2">
@@ -84,7 +91,7 @@ const Footer = () => {
             <div className="flex justify-center sm:justify-start">
               <button
                 type="submit"
-                className="bg-red-600 hover:bg-white w-24 text-white hover:text-red-500 hover:border-2 hover:border-red-700 p-2 rounded-2xl"
+                className="bg-white hover:bg-white w-24 text-red-600 hover:text-white hover:border-2 hover:border-red-700 hover:bg-red-600 p-2 rounded-2xl"
               >
                 Submit
               </button>
@@ -95,7 +102,7 @@ const Footer = () => {
 
       <div className=" flex flex-col border-t border-gray-700 text-center p-4 mt-8">
         © {new Date().getFullYear()} Kuli. <br></br>
-       Designed & Developed by:{" "}
+       Designed & Developed by:{" "} <br></br> <br></br>
        <ul className="flex flex-row justify-center">
         <li>
         <a
@@ -103,12 +110,13 @@ const Footer = () => {
           target="blank"
           className="hover:text-white"
         >
-       <Image src={logo} alt="Logo" width={100} height={100}   />
+       <Image src={skill} alt="Skillancer Logo" width={90} height={90}   />
         </a>
         </li>
+      
         <li>
-          <p>
-            &
+          <p className="font-extrabold ">
+             & 
           </p>
         </li>
         <li>
@@ -117,7 +125,7 @@ const Footer = () => {
           target="blank"
           className="hover:text-white"
         >
-       <Image src={logo} alt="Logo" width={100} height={100}   />
+       <Image src={dglogo} alt="Durgesh Prasad Logo" width={170} height={170}   />
         </a>
         </li>
        </ul>
