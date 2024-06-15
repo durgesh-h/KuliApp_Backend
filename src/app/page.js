@@ -1,23 +1,20 @@
 "use client"
-import React from 'react'
-
-import PNRComponent from './Components/PNRcomponents';
+import React from 'react';
+import { ChakraProvider } from "@chakra-ui/react";
+import PNRComponentWithToast from './Components/PNRcomponents'; // Updated import
 import Navbar from './Components/Navbar';
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
+
 const Home = () => {
   return (
-    <>
-     {/* <NavbarDemo/> */}
-    <div className=' bg-blue-400 text-center'>
-      {/* <h1>This is Homepage</h1> */}
-      <Navbar/>
-      <PNRComponent/>
-    <Footer/>
-
-    </div>
-    </>
-   
-  )
-}
+    <ChakraProvider>
+      <div className='bg-blue-400 text-center'>
+        <Navbar/>
+        <PNRComponentWithToast/> {/* Use the component with toast integration */}
+        <Footer/>
+      </div>
+    </ChakraProvider>
+  );
+};
 
 export default Home;

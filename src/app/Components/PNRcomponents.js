@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import citiesData from "../utils/cities.json"; // Importing local JSON data
 import "./PNRStyle.css";
+import { useToast } from "@chakra-ui/react"; // Import useToast
 
 class PNRComponent extends React.Component {
   constructor(props) {
@@ -26,16 +27,24 @@ class PNRComponent extends React.Component {
   handleManualEntry = () => {
     const userEnteredStation = prompt("Please enter the destination station:");
     if (userEnteredStation) {
-      const matchedCity = citiesData.find(city => city.name === userEnteredStation);
+      const matchedCity = citiesData.find((city) => city.name === userEnteredStation);
       if (matchedCity) {
-        alert(`Destination station matched: ${userEnteredStation}`);
+        this.props.showToast({
+          title: "Destination station matched",
+          description: `Destination station matched: ${userEnteredStation}`,
+          status: "success",
+        });
         if (window.confirm('Would you like to open WhatsApp to send a message?')) {
           const message = `Hey! I need your service in ${userEnteredStation}. Can we talk?`;
           const encodedMessage = encodeURIComponent(message);
           window.open(`https://wa.me/${matchedCity.whatsappNumber}?text=${encodedMessage}`);
         }
       } else {
-        alert("No matching station found. Please try again.");
+        this.props.showToast({
+          title: "No matching station found",
+          description: "Please try again.",
+          status: "error",
+        });
       }
     }
   };
@@ -73,12 +82,14 @@ class PNRComponent extends React.Component {
 
       // Matching destination station with local JSON data
       const destinationStation = data.destinationInfo.stationName; // Updated to match new API response structure
-      const matchedCity = citiesData.find(
-        (city) => city.name === destinationStation
-      );
+      const matchedCity = citiesData.find((city) => city.name === destinationStation);
       if (matchedCity) {
         // Display message and open WhatsApp popup
-        alert(`Destination station matched: ${destinationStation}`);
+        this.props.showToast({
+          title: "Destination station matched",
+          description: `Destination station matched: ${destinationStation}`,
+          status: "success",
+        });
         if (window.confirm('Would you like to open WhatsApp to send a message?')) {
           const message = `Hey! I need your service in ${destinationStation}. Can we talk?`;
           const encodedMessage = encodeURIComponent(message);
@@ -107,7 +118,7 @@ class PNRComponent extends React.Component {
 
     return (
       <div className="min-h-screen font-bold flex flex-col items-center justify-center bg-white p-4 sm:p-8">
-        <div className="bg-white border-2 border-red-500 shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-lg transform transition-all hover:shadow-2xl hover:scale-105">
+        <div className="bg-white border-2 border-red-500 shadow-lg rounded-lg p-6 sm:p-8 w-2/3 transform transition-all hover:shadow-2xl hover:scale-105">
           <h2 className="text-2xl  mb-6 text-center text-back animate-fadeIn">Enter Your PNR Number</h2>
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mb-6 animate-slideUp">
             <input
@@ -150,8 +161,8 @@ class PNRComponent extends React.Component {
                       <th className="px-4 py-2 border">Train Name</th>
                       <th className="px-4 py-2 border">Source Station</th>
                       <th className="px-4 py-2 border">Destination Station</th>
-                      <th className="px-4 py-2 border">Departure Date</th>
-                      <th className="px-4 py-2 border">Departure Time</th>
+                      <th className="px-4 py-2 border">Destination Arrival Date</th>
+                      <th className="px-4 py-2 border">Destination Arrival Time</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -195,4 +206,21 @@ class PNRComponent extends React.Component {
   }
 }
 
-export default PNRComponent;
+function PNRComponentWithToast(props) {
+  const toast = useToast();
+
+  const showToast = (options) => {
+    toast({
+      title: options.title,
+      description: options.description,
+      status: options.status,
+      duration: 9000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  return <PNRComponent showToast={showToast} />;
+}
+
+export default PNRComponentWithToast;
