@@ -118,7 +118,7 @@ class PNRComponent extends React.Component {
 
     return (
       <div className="min-h-screen font-bold flex flex-col items-center justify-center bg-white p-4 sm:p-8">
-        <div className="bg-white border-2 border-red-500 shadow-lg rounded-lg p-6 sm:p-8 w-2/3 transform transition-all hover:shadow-2xl hover:scale-105">
+        <div className="bg-white border-2 border-red-500 shadow-lg rounded-lg p-6 md:w-2/3 w-full transform transition-all hover:shadow-2xl hover:scale-105">
           <h2 className="text-2xl  mb-6 text-center text-back animate-fadeIn">Enter Your PNR Number</h2>
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mb-6 animate-slideUp">
             <input
