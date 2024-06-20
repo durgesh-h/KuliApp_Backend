@@ -27,7 +27,7 @@ const ErrorComponent = ({ error, setOutputData }) => {
         <OutputComponent outputData={outputData} />
       ) : (
         <div>
-          <p className="text-xl font-bold text-red-500 mb-4">{error}</p>
+          <p className="text-xl font-bold text-red-200 mb-4">{error}</p>
           <div className="mb-4">
             <input
               type="text"
@@ -43,7 +43,7 @@ const ErrorComponent = ({ error, setOutputData }) => {
               onClick={handleManualEntry}
               className="w-full bg-blue-500 text-white rounded-lg p-3 font-bold hover:bg-blue-600"
             >
-              Search City
+              Search by City
             </button>
           </div>
         </div>

@@ -13,7 +13,7 @@ const OutputComponent = ({ outputData }) => {
     <div className="text-center text-white">
       {outputData.matched ? (
         <>
-          <p className="text-xl font-bold text-green-600 mb-4">
+          <p className="text-xl  text-green-600 mb-4">
             Thankyou for visiting us! <br></br> Our Services Are Available at{" "}
             {outputData.city.name}
           </p>
@@ -27,8 +27,8 @@ const OutputComponent = ({ outputData }) => {
         </>
       ) : (
         <>
-          <p className="text-xl font-bold text-red-600 mb-4">
-            Unfortunately, Our Services Are Not Available At Your City, But We
+          <p className="text-xl  text-red-200 mb-4">
+            Unfortunately, <br></br> Our Services Are Not Available At Your City <br></br>But We
             Will Reach Your City Soon. <br></br>Thankyou for visiting us!
           </p>
          <button
