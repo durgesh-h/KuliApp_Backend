@@ -49,7 +49,7 @@ const PNRComponent = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-app">
-      <div className="bg-glass rounded-lg shadow-lg p-6 w-full max-w-md mx-auto">
+      <div className="bg-glass rounded-lg shadow-lg p-6 lg:w-full w-4/5 max-w-md mx-auto">
         {!outputData && !error && (
           <div>
             <h2 className="text-2xl font-bold mb-4 text-center text-white">Enter Your PNR Number</h2>
