@@ -27,7 +27,7 @@ const ErrorComponent = ({ error, setOutputData }) => {
         <OutputComponent outputData={outputData} />
       ) : (
         <div>
-          <p className="text-xl  text-red-200 mb-4">{error}</p>
+          <p className="text-xl  text-white mb-4">{error}</p>
           <div className="mb-4">
             <input
               type="text"

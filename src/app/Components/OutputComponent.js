@@ -27,7 +27,7 @@ const OutputComponent = ({ outputData }) => {
         </>
       ) : (
         <>
-          <p className="text-xl  text-red-200 mb-4">
+          <p className="text-xl  text-red-100 mb-4">
             Unfortunately, <br></br> Our Services Are Not Available At Your City <br></br>But We
             Will Reach Your City Soon. <br></br>Thankyou for visiting us!
           </p>
