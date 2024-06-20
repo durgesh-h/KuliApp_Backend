@@ -4,14 +4,15 @@
 
 /* Custom styles */
 .bg-app {
-  background-image: url('../assets/train.png'); /* Adjust the path to your background image */
+  /* background-image: url('../assets/train.png'); Adjust the path to your background image */
+ 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-glass {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(235,235, 235, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

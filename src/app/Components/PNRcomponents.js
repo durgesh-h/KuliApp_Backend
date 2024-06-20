@@ -48,11 +48,11 @@ const PNRComponent = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-app">
+    <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="bg-glass rounded-lg shadow-lg p-6 lg:w-full w-4/5 max-w-md mx-auto">
         {!outputData && !error && (
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-center text-white">Enter Your PNR Number</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-black">Enter Your PNR Number</h2>
             <div className="mb-4">
               <input
                 type="text"
@@ -60,7 +60,7 @@ const PNRComponent = () => {
                 name="pnr"
                 value={PNRNumber}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:border-blue-500 bg-white bg-opacity-80"
+                className="w-full border text-black border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:border-blue-500 bg-white bg-opacity-80"
                 placeholder="PNR Number"
               />
               <button

@@ -20,21 +20,21 @@ const OutputComponent = ({ outputData }) => {
           <button
             type="button"
             onClick={handleClick}
-            className="hover:bg-green-500 hover:text-white rounded-lg p-3 font-bold bg-white text-green-500"
+            className="hover:bg-green-600 hover:text-white rounded-lg p-3 font-bold bg-green-500 text-white"
           >
             Book On WhatsApp
           </button>
         </>
       ) : (
         <>
-          <p className="text-xl  text-red-100 mb-4">
+          <p className="text-xl  text-black mb-4">
             Unfortunately, <br></br> Our Services Are Not Available At Your City <br></br>But We
             Will Reach Your City Soon. <br></br>Thankyou for visiting us!
           </p>
          <button
         type="button"
         onClick={() => (window.location.href = "https://kuli.live")}
-        className="hover:bg-red-500 hover:text-white rounded-lg p-3 font-bold bg-white text-red-500"
+        className="bg-red-500 text-white rounded-lg p-3 font-bold hover:bg-red-600 "
       >
         Back to Home
       </button>
