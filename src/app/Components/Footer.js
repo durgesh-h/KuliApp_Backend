@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" flex flex-col border-t border-gray-700 text-center p-4 mt-8">
+      {/* <div className=" flex flex-col border-t border-gray-700 text-center p-4 mt-8">
         © {new Date().getFullYear()} Kuli. <br></br>
        Designed & Developed by:{" "} <br></br> <br></br>
        <ul className="flex flex-row justify-center">
@@ -130,7 +130,7 @@ const Footer = () => {
         </li>
        </ul>
        
-      </div>
+      </div> */}
     </footer>
   );
 };

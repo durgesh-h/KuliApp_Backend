@@ -1,47 +1,78 @@
-/* .app {
-    background-color: gray;
-    width: 450px;
-    min-height: 400px;
-    min-width: min-content;
-    border-radius: 15px;
+/* PNRStyle.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 20px;
-    text-align: left;
-
-    justify-content: space-evenly;
-    box-shadow: 10px 10px 42px 0px rgba(63, 59, 59, 0.75);
-}
-
-.table {
-    border-collapse: collapse;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     width: 100%;
-    margin-top: 20px;
-    height: auto;
-}
-
-.table th,
-.table td {
-    text-align: left;
-    padding: 8px;
-}
-
-.table th {
-    background-color: black;
-    color: #fff;
-}
-
-.table td {
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
     border: 1px solid #ddd;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.table tr:hover {
-    background-color: #ddd;
-}
-
-.errorMessage {
-    color: white;
-    background-color: rgb(119, 16, 16);
-} */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #ff6600;
+    outline: none;
+  }
+  
+  .button {
+    background-color: #ff6600;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #e65c00;
+  }
+  
+  .message {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
