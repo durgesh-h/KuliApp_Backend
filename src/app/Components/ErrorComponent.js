@@ -22,7 +22,7 @@ const ErrorComponent = ({ error, setOutputData }) => {
   };
 
   return (
-    <div className="text-center text-white">
+    <div className="text-center text-black ">
       {showOutput && outputData ? (
         <OutputComponent outputData={outputData} />
       ) : (

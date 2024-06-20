@@ -75,8 +75,12 @@ const PNRComponent = () => {
         )}
         {outputData && <OutputComponent outputData={outputData} />}
         {error && <ErrorComponent error={error} setOutputData={setOutputData} />}
+        {/* <ErrorComponent error={error} setOutputData={setOutputData} />\ */}
+        
       </div>
+    
     </div>
+    
   );
 };
 
