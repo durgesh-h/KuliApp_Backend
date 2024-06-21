@@ -28,8 +28,8 @@ const OutputComponent = ({ outputData }) => {
       ) : (
         <>
           <p className="text-xl  text-black mb-4">
-            Unfortunately, <br></br> Our Services Are Not Available At Your City <br></br>But We
-            Will Reach Your City Soon. <br></br>Thankyou for visiting us!
+            Unfortunately, Our Services Are Not Available At Your Station <br></br>But We
+            Will Reach Soon. <br></br>Thankyou for visiting us!
           </p>
          <button
         type="button"

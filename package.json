@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+     "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,6 +24,7 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.23.1",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {

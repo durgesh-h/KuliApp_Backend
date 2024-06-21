@@ -66,6 +66,11 @@ const Footer = () => {
                 FAQ's
               </a>
             </li>
+            <li>
+              <a href="/DurgeshPrasad" className="hover:text-gray-300 italic">
+                Developer's Contact
+              </a>
+            </li>
           </ul>
         </div>
 
