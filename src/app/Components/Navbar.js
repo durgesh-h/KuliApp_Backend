@@ -35,7 +35,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`font-bold transition-all duration-300 ${activeLink === link.name ? 'text-red-500 underline' : 'hover:text-red-500 hover:underline'}`}
+              className={`font-bold transition-all duration-300 ${activeLink === link.name ? 'text-red underline' : 'hover:text-red hover:underline'}`}
               onClick={() => handleNavLinkClick(link.name)}
             >
               {link.name}
@@ -52,10 +52,10 @@ const Navbar = () => {
 
         {/* Social Media Links */}
         <div className="hidden md:flex text-lg space-x-4 ml-36">
-          <FaFacebookF className="hover:text-red-500 transition-all duration-300" />
-          <FaInstagram className="hover:text-red-500 transition-all duration-300" />
-          <FaLinkedinIn className="hover:text-red-500 transition-all duration-300" />
-          <FontAwesomeIcon icon={faXTwitter} className="hover:text-red-500 transition-all duration-300 w-4 h-4" />
+          <FaFacebookF className="hover:text-red transition-all duration-300" />
+          <FaInstagram className="hover:text-red transition-all duration-300" />
+          <FaLinkedinIn className="hover:text-red transition-all duration-300" />
+          <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 h-4" />
         </div>
 
         {/* Hamburger Button */}
@@ -75,17 +75,17 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`font-bold transition-all duration-300 ${activeLink === link.name ? 'text-red-500 underline' : 'hover:text-red-500 hover:underline'}`}
+              className={`font-bold transition-all duration-300 ${activeLink === link.name ? 'text-red underline' : 'hover:text-red hover:underline'}`}
               onClick={() => handleNavLinkClick(link.name)}
             >
               {link.name}
             </a>
           ))}
           <div className="flex space-x-4">
-            <FaFacebookF className="hover:text-red-500 transition-all duration-300" />
-            <FaInstagram className="hover:text-red-500 transition-all duration-300" />
-            <FaLinkedinIn className="hover:text-red-500 transition-all duration-300" />
-            <FontAwesomeIcon icon={faXTwitter} className="hover:text-red-500 transition-all duration-300 w-4 h-4" />
+            <FaFacebookF className="hover:text-red transition-all duration-300" />
+            <FaInstagram className="hover:text-red transition-all duration-300" />
+            <FaLinkedinIn className="hover:text-red transition-all duration-300" />
+            <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 h-4" />
           </div>
         </div>
       )}

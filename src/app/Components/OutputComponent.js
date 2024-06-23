@@ -27,46 +27,20 @@ const OutputComponent = ({ outputData }) => {
         </>
       ) : (
         <>
-          <p className="text-xl  text-black mb-4">
+          <p className="text-xl  text-red mb-4">
             Unfortunately, Our Services Are Not Available At Your Station <br></br>But We
             Will Reach Soon. <br></br>Thankyou for visiting us!
           </p>
          <button
         type="button"
         onClick={() => (window.location.href = "https://kuli.live")}
-        className="bg-red-500 text-white rounded-lg p-3 font-bold hover:bg-red-600 "
+        className="bg-red text-white rounded-lg p-3 font-bold hover:bg-back hover:text-red "
       >
         Back to Home
       </button>
         </>
       )}
      </div>
-    // <div className="text-center text-white">
-    //   <>
-    //     <p className="text-xl font-bold text-green-600 mb-4">
-    //       Thankyou for visiting us! <br></br> Our Services Are Available at:{" "}
-    //     </p>
-    //     <button
-    //       type="button"
-    //       className="hover:bg-green-500 hover:text-white rounded-lg p-3 font-bold bg-white text-green-500"
-    //     >
-    //       Book On WhatsApp
-    //     </button>
-    //   </>
-
-    //   <p className="text-xl font-bold text-red-600 mb-4">
-    //     {" "}
-    //     Unfortunately, Our Services Are Not Available At Your City, But We Will
-    //     Reach Your City Soon. <br></br>Thankyou for visiting us!
-    //   </p>
-    //   <button
-    //     type="button"
-    //     onClick={() => (window.location.href = "https://kuli.live")}
-    //     className="hover:bg-red-500 hover:text-white rounded-lg p-3 font-bold bg-white text-red-500"
-    //   >
-    //     Back to Home
-    //   </button>
-    // </div>
   );
 };
 

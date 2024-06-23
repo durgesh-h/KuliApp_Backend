@@ -14,7 +14,8 @@ module.exports = {
       },
 
       colors: {
-        back: "#000",
+        back: "#000", // Example color already defined
+        red:"#ff0100", // New color definition for red
       },
     },
   },

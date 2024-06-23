@@ -2,8 +2,8 @@ import React from "react";
 
 const ErrorComponent = ({ error }) => {
   return (
-    <div className="text-center text-black">
-      <p className="text-xl text-black mb-4">{error}</p>
+    <div className="text-center text-red">
+      <p className="text-xl text-red mb-4">{error}</p>
     </div>
   );
 };

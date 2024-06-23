@@ -16,8 +16,8 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 const Footer = () => {
   return (
-    <footer className="bg-back text-md text-white p-10 text-sm">
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+    <footer className="bg-back text-md  text-white p-10 text-sm">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-1 gap-10">
         {/* Company Info */}
         <div className="flex flex-col space-y-4 items-center ">
           <h2 className="text-white text-md font-extrabold">Social Media</h2>
@@ -67,7 +67,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/DurgeshPrasad" className="hover:text-gray-300 italic">
+              <a href="https://www.durgeshprasad.co" className="hover:text-gray-300">
                 Developer's Contact
               </a>
             </li>
@@ -91,12 +91,12 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded bg-back border-2 border-white text-white"
+              className="p-2  rounded bg-back border-2 border-white text-white"
             />
-            <div className="flex justify-center sm:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <button
                 type="submit"
-                className="bg-white hover:bg-white w-24 text-red-600 hover:text-white hover:border-2 hover:border-red-700 hover:bg-red-600 p-2 rounded-2xl"
+                className="bg-red hover:bg-white w-24 text-red-600 hover:text-red hover:border-2 hover:border-red-700 hover:bg-red-600 p-2 rounded-2xl"
               >
                 Submit
               </button>
