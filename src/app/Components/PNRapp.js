@@ -74,7 +74,7 @@ const PNRComponents = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-80 h-80 lg:h-72 backdrop-blur-sm rounded-lg shadow-lg p-6 w-full">
+    <div className="bg-white bg-opacity-80  backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
       {/* Radio buttons for selecting search type */}
       <div className="mb-4 text-center p-6">
         <label className="mr-4">
@@ -114,7 +114,7 @@ const PNRComponents = () => {
                 name="pnr"
                 value={PNRNumber}
                 onChange={handlePNRChange}
-                className="w-full lg:w-auto flex-grow border text-black border-gray-300 rounded-full p-3 focus:outline-none bg-white bg-opacity-80"
+                className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3 focus:outline-back bg-white bg-opacity-80"
                 placeholder="PNR Number"
               />
             ) : (
@@ -124,7 +124,7 @@ const PNRComponents = () => {
                 name="station"
                 value={stationName}
                 onChange={handleStationChange}
-                className="w-full lg:w-auto flex-grow border text-black border-gray-300 rounded-full p-3 focus:outline-none bg-white bg-opacity-80"
+                className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3  focus:outline-back bg-white bg-opacity-80"
                 placeholder="Station Name"
               />
             )}
@@ -153,7 +153,7 @@ const PNRComponents = () => {
               name="station"
               value={stationName}
               onChange={handleStationChange}
-              className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3 focus:outline-none bg-white bg-opacity-80"
+              className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3  focus:outline-back bg-white bg-opacity-80"
               placeholder="Station Name"
             />
             {/* Search button for error scenario */}
