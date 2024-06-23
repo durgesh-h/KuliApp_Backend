@@ -29,14 +29,13 @@ const PNRComponents = () => {
     setOutputData(null);
     setError(null);
 
-   
-
     if (searchType === "pnr") {
       const options = {
         method: "GET",
         url: `https://pnr-status-indian-railway.p.rapidapi.com/pnr-check/${PNRNumber}`,
         headers: {
-          "X-RapidAPI-Key": "e1c2a461a3msh8fe1d8eff1d0b93p10ef82jsne71282f228c6",
+          "X-RapidAPI-Key":
+            "e1c2a461a3msh8fe1d8eff1d0b93p10ef82jsne71282f228c6",
           "X-RapidAPI-Host": "pnr-status-indian-railway.p.rapidapi.com",
         },
       };
@@ -46,7 +45,9 @@ const PNRComponents = () => {
         const data = response.data.data;
 
         const destinationStation = data.destinationInfo.stationName;
-        const matchedCity = citiesData.find((city) => city.name.toLowerCase() === destinationStation.toLowerCase());
+        const matchedCity = citiesData.find(
+          (city) => city.name.toLowerCase() === destinationStation.toLowerCase()
+        );
 
         if (matchedCity) {
           setOutputData({ city: matchedCity, matched: true });
@@ -55,15 +56,21 @@ const PNRComponents = () => {
         }
       } catch (error) {
         if (error.response && error.response.status === 429) {
-          setError("API limit exceeded. Please search manually by entering the city name.");
+          setError(
+            "API limit exceeded. Please search manually by entering the city name."
+          );
           setSearchType("station");
         } else {
-          setError("PNR is incorrect. Please search manually by entering the city name.");
+          setError(
+            "PNR is incorrect. Please search manually by entering the city name."
+          );
           setSearchType("station");
         }
       }
     } else if (searchType === "station") {
-      const matchedCity = citiesData.find((city) => city.name.toLowerCase() === stationName.toLowerCase());
+      const matchedCity = citiesData.find(
+        (city) => city.name.toLowerCase() === stationName.toLowerCase()
+      );
 
       if (matchedCity) {
         setOutputData({ city: matchedCity, matched: true });
@@ -76,14 +83,14 @@ const PNRComponents = () => {
   return (
     <div className="bg-white bg-opacity-80  backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
       {/* Radio buttons for selecting search type */}
-      <div className="mb-4 text-center p-6">
+      <div className="flex mb-0 justify-around text-center p-4 lg:px-32">
         <label className="mr-4">
           <input
             type="radio"
             value="pnr"
             checked={searchType === "pnr"}
             onChange={handleSearchTypeChange}
-            className="mr-2"
+            className="custom-radio mr-2"
           />
           PNR No.
         </label>
@@ -93,7 +100,7 @@ const PNRComponents = () => {
             value="station"
             checked={searchType === "station"}
             onChange={handleSearchTypeChange}
-            className="mr-2"
+            className="custom-radio mr-2"
           />
           Station
         </label>
@@ -102,7 +109,7 @@ const PNRComponents = () => {
       {/* Conditional rendering based on search type */}
       {!outputData && !error && (
         <div>
-          <h2 className="text-2xl lg:text-3xl font-bold font-mono mb-4 text-center text-black">
+          <h2 className="text-2xl lg:text-3xl font-bold font-mono mb-6 text-center text-black">
             {searchType === "pnr" ? "Enter PNR Number" : "Enter Station Name"}
           </h2>
           <div className="flex lg:flex-row gap-2 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
