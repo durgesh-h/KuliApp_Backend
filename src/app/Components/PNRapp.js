@@ -103,7 +103,7 @@ const PNRComponents = () => {
       {!outputData && !error && (
         <div>
           <h2 className="text-2xl lg:text-3xl font-bold font-mono mb-4 text-center text-black">
-            {searchType === "pnr" ? "Enter Your PNR Number" : "Enter Your Station Name"}
+            {searchType === "pnr" ? "Enter PNR Number" : "Enter Station Name"}
           </h2>
           <div className="flex lg:flex-row gap-2 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
             {/* Input field based on search type */}
