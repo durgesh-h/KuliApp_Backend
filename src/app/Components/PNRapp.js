@@ -10,19 +10,39 @@ const PNRComponents = () => {
   const [searchType, setSearchType] = useState("pnr");
   const [outputData, setOutputData] = useState(null);
   const [error, setError] = useState(null);
+  const [suggestions, setSuggestions] = useState([]);
 
   const handlePNRChange = (event) => {
     setPNRNumber(event.target.value);
   };
 
   const handleStationChange = (event) => {
-    setStationName(event.target.value);
+    const value = event.target.value;
+    setStationName(value);
+
+    // Filter suggestions based on any part of the input value, sort alphabetically, and limit to top 10
+    if (value.length > 0) {
+      const filteredSuggestions = citiesData
+        .filter((city) => city.name.toLowerCase().includes(value.toLowerCase()))
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .slice(0, 10);
+      setSuggestions(filteredSuggestions);
+    } else {
+      setSuggestions([]);
+    }
   };
 
   const handleSearchTypeChange = (event) => {
     setSearchType(event.target.value);
     setOutputData(null);
     setError(null);
+    setStationName("");
+    setSuggestions([]);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setStationName(suggestion);
+    setSuggestions([]);
   };
 
   const handleSubmit = async () => {
@@ -81,7 +101,7 @@ const PNRComponents = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-80  backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
+    <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
       {/* Radio buttons for selecting search type */}
       <div className="flex mb-0 justify-around text-center p-4 lg:px-32">
         <label className="mr-4">
@@ -110,7 +130,7 @@ const PNRComponents = () => {
       {!outputData && !error && (
         <div>
           <h2 className="text-2xl lg:text-3xl font-bold font-mono mb-6 text-center text-black">
-            {searchType === "pnr" ? "Enter PNR Number" : "Enter Station Name"}
+            {searchType === "pnr" ? "Enter PNR Number" : "Enter Station Name/Code"}
           </h2>
           <div className="flex lg:flex-row gap-2 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
             {/* Input field based on search type */}
@@ -125,15 +145,30 @@ const PNRComponents = () => {
                 placeholder="PNR Number"
               />
             ) : (
-              <input
-                type="text"
-                id="station"
-                name="station"
-                value={stationName}
-                onChange={handleStationChange}
-                className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3  focus:outline-back bg-white bg-opacity-80"
-                placeholder="Station Name"
-              />
+              <div className="w-full relative">
+                <input
+                  type="text"
+                  id="station"
+                  name="station"
+                  value={stationName}
+                  onChange={handleStationChange}
+                  className="w-full flex-grow border text-black border-red rounded-full p-3 focus:outline-back bg-white bg-opacity-80"
+                  placeholder="Station Name"
+                />
+                {suggestions.length > 0 && (
+                  <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-48 overflow-y-auto">
+                    {suggestions.map((suggestion, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleSuggestionClick(suggestion.name)}
+                        className="p-2 cursor-pointer hover:bg-gray-200 rounded-sm"
+                      >
+                        {suggestion.name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             )}
             {/* Search button */}
             <button
@@ -153,17 +188,33 @@ const PNRComponents = () => {
         <>
           <ErrorComponent error={error} />
           <div className="flex lg:flex-row gap-2 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
-            {/* Input field for error scenario */}
-            <input
-              type="text"
-              id="station"
-              name="station"
-              value={stationName}
-              onChange={handleStationChange}
-              className="w-full lg:w-auto flex-grow border text-black border-red rounded-full p-3  focus:outline-back bg-white bg-opacity-80"
-              placeholder="Station Name"
-            />
-            {/* Search button for error scenario */}
+            {
+              <div className="w-full relative">
+                <input
+                  type="text"
+                  id="station"
+                  name="station"
+                  value={stationName}
+                  onChange={handleStationChange}
+                  className="w-full flex-grow border text-black border-red rounded-full p-3 focus:outline-back bg-white bg-opacity-80"
+                  placeholder="Station Name"
+                />
+                {suggestions.length > 0 && (
+                  <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-48 overflow-y-auto">
+                    {suggestions.map((suggestion, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleSuggestionClick(suggestion.name)}
+                        className="p-2 cursor-pointer hover:bg-gray-200 rounded-sm"
+                      >
+                        {suggestion.name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            }
+            {/* Search button */}
             <button
               type="submit"
               onClick={handleSubmit}
