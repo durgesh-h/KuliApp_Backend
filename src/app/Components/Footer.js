@@ -16,27 +16,25 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 const Footer = () => {
   return (
-    <footer className="bg-back text-md  text-white p-10 text-sm">
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-1 gap-10">
+    <footer className="bg-back text-md font-bold text-white p-10 ">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-1 gap-10">
         {/* Company Info */}
         <div className="flex flex-col space-y-4 items-center ">
           <h2 className="text-white text-md font-extrabold">Social Media</h2>
-          <div className="md:flex  sm:space-x-4 space-x-0 space-y-4 md:space-y-0 ">
-            <FaFacebookF className="hover:text-red-500 transition-all duration-300" />
-            <FaInstagram className="hover:text-red-500 transition-all duration-300" />
-            <FaLinkedinIn className="hover:text-red-500 transition-all duration-300" />
-            <FontAwesomeIcon
-              icon={faXTwitter}
-              className="hover:text-red-500 transition-all duration-300 w-4 h-4"
-            />
+          <div className="flex text-lg space-x-4">
+            <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://x.com/kuli_india">  <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5"/></a>
+
           </div>
           <div className="flex">
             {/* Example Social Links */}
             <a
-              href="mailto:kuligmail.com"
+              href="mailto:contact@kuli.live"
               className="hover:text-gray-300"
             >
-              kuli@gmail.com <br></br> +911234567890
+              contact@kuli.live <br></br> +91 782-741-4428
             </a>
           </div>
         </div>
@@ -68,7 +66,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="https://www.durgeshprasad.co" className="hover:text-gray-300">
-                Developer's Contact
+                Developer
               </a>
             </li>
           </ul>
@@ -78,12 +76,12 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="text-white text-md font-extrabold">Location</h3>
           <ul className="space-y-2">
-            <p>Pryagraj, UP</p>{" "}
+            <p>Prayagraj, UP</p>{" "}
           </ul>
         </div>
 
         {/* Newsletter */}
-        <div className="space-y-0">
+        <div className="space-y-0  lg:text-start ">
           <h3 className="text-white text-md font-extrabold">
             Subscribe to our Newsletter
           </h3>
@@ -105,37 +103,17 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* <div className=" flex flex-col border-t border-gray-700 text-center p-4 mt-8">
-        © {new Date().getFullYear()} Kuli. <br></br>
-       Designed & Developed by:{" "} <br></br> <br></br>
-       <ul className="flex flex-row justify-center">
-        <li>
-        <a
+      <div className=" flex justify-center  gap-4 p-4 mt-8">
+        {/* © {new Date().getFullYear()} Kuli. <br></br> */}
+       Designed & Developed by:    <a
           href="https://skillancer.in"
           target="blank"
-          className="hover:text-white"
+          className="hover:text-white text-center"
         >
-       <Image src={skill} alt="Skillancer Logo" width={90} height={90}   />
+       <Image src={skill} alt="Skillancer Logo" width={110} height={110}   />
         </a>
-        </li>
-      
-        <li>
-          <p className="font-extrabold ">
-             & 
-          </p>
-        </li>
-        <li>
-        <a
-          href="https://durgeshprasad.co"
-          target="blank"
-          className="hover:text-white"
-        >
-       <Image src={dglogo} alt="Durgesh Prasad Logo" width={170} height={170}   />
-        </a>
-        </li>
-       </ul>
-       
-      </div> */}
+    
+      </div>
     </footer>
   );
 };

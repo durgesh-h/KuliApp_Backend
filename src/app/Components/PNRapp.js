@@ -101,9 +101,9 @@ const PNRComponents = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
+    <div id="PNR" className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
       {/* Radio buttons for selecting search type */}
-      <div className="flex mb-0 justify-around text-center p-4 lg:px-32">
+      <div className="flex mb-0 justify-center text-center p-4 lg:px-32 lg:space-x-12">
         <label className="mr-4">
           <input
             type="radio"
@@ -129,10 +129,10 @@ const PNRComponents = () => {
       {/* Conditional rendering based on search type */}
       {!outputData && !error && (
         <div>
-          <h2 className="text-2xl lg:text-3xl font-bold font-mono mb-6 text-center text-black">
+          <h2 className="text-2xl lg:text-3xl font-bold font-bold mb-6 text-center text-black">
             {searchType === "pnr" ? "Enter PNR Number" : "Enter Station Name/Code"}
           </h2>
-          <div className="flex lg:flex-row gap-2 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
+          <div className="flex lg:flex-row gap-2 lg:px-96 items-center space-y-0 lg:space-y-0 lg:space-x-0 mb-4">
             {/* Input field based on search type */}
             {searchType === "pnr" ? (
               <input
@@ -174,7 +174,7 @@ const PNRComponents = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="lg:w-auto bg-red text-white rounded-full p-3 font-bold hover:bg-back hover:text-red bg-opacity-80"
+              className="lg:w-24 bg-red text-white rounded-full p-3 font-bold hover:bg-back  bg-opacity-80"
             >
               Search
             </button>
@@ -218,7 +218,7 @@ const PNRComponents = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="lg:w-auto bg-red text-white rounded-full p-3 font-bold hover:bg-back hover:text-red bg-opacity-80"
+              className="lg:w-24 bg-red text-white rounded-full p-3 font-bold hover:bg-back  bg-opacity-80"
             >
               Search
             </button>

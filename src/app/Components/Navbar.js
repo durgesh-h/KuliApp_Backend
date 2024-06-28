@@ -21,14 +21,14 @@ const Navbar = () => {
 
   const links = [
     { name: 'Home', href: 'https://kuli.live' },
-    { name: 'Contact Us', href: 'https://kuli.live' },
-    { name: 'Book Now', href: '/' },
-    { name: 'About Us', href: 'https://kuli.live' }
+    { name: 'Contact Us', href: 'https://kuli.skillancer.in/#contact' },
+    { name: 'Book Now', href: '/#PNR' },
+    { name: 'About Us', href: 'https://kuli.skillancer.in/#about' }
   ];
 
   return (
     <nav className="bg-black text-white p-4">
-      <div className="container mx-auto text-sm flex justify-between items-center px-0 sm:px-6">
+      <div className="container mx-auto text-md flex justify-between items-center px-0 sm:px-6">
         {/* Links */}
         <div className="hidden md:flex space-x-4">
           {links.map(link => (
@@ -52,11 +52,11 @@ const Navbar = () => {
 
         {/* Social Media Links */}
         <div className="hidden md:flex text-lg space-x-4 ml-36">
-          <FaFacebookF className="hover:text-red transition-all duration-300" />
-          <FaInstagram className="hover:text-red transition-all duration-300" />
-          <FaLinkedinIn className="hover:text-red transition-all duration-300" />
-          <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 h-4" />
-        </div>
+            <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://x.com/kuli_india">  <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5"/></a>
+   </div>
 
         {/* Hamburger Button */}
         <div className="md:hidden" onClick={toggleMenu}>
@@ -82,11 +82,11 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex space-x-4">
-            <FaFacebookF className="hover:text-red transition-all duration-300" />
-            <FaInstagram className="hover:text-red transition-all duration-300" />
-            <FaLinkedinIn className="hover:text-red transition-all duration-300" />
-            <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 h-4" />
-          </div>
+          <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://x.com/kuli_india">  <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5"/></a>
+       </div>
         </div>
       )}
     </nav>
