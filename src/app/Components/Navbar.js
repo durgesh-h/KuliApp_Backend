@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white p-4">
-      <div className="container mx-auto text-md flex justify-between items-center px-0 sm:px-6">
+      <div className="container mx-auto lg:text-md md:text-sm flex justify-between items-center px-0 sm:px-6">
         {/* Links */}
         <div className="hidden md:flex space-x-4">
           {links.map(link => (

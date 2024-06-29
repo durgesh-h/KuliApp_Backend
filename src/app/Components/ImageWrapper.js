@@ -6,7 +6,7 @@ import Image from "next/image";
 const ImageWrapper = () => {
   return (
     <div className=" bg-white  flex flex-col  items-center">
-      <div className="relative  lg:w-full lg:px-0">
+      <div className="relative  w-full lg:px-0">
         {/* Top Image */}
         <div className="w-full  flex lg:h-[30rem] justify-center shadow-lg  lg:mt-0 lg:mb-4 ">
           <Image src={train} alt="Top Image" className="w-full h-auto object-fit shadow-lg " />
