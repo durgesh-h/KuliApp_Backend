@@ -16,12 +16,12 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 const Footer = () => {
   return (
-    <footer className="bg-back  text-md font-bold text-white px-10 p-1 ">
+    <footer className="bg-back  text-md font-normal text-white px-10 p-1 ">
       <div className="border-t-4 mx-34 border-red border-solid"></div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 py-10 lg:grid-cols-4 lg:gap-1 gap-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 py-10 lg:grid-cols-3 lg:gap-22 gap-10">
         {/* Company Info */}
         <div className="flex flex-col space-y-4 items-center ">
-          <h2 className="text-white text-md font-extrabold">Social Media</h2>
+          <h2 className="text-white text-md font-bold">Social Media</h2>
           <div className="flex text-lg space-x-4">
             <a href="https://www.facebook.com/profile.php?id=61555889204274">
               {" "}
@@ -53,7 +53,7 @@ const Footer = () => {
 
         {/* Links */}
         <div className="space-y-4 ">
-          <h3 className="text-white text-md font-extrabold">Need Help</h3>
+          <h3 className="text-white text-md font-bold">Need Help</h3>
           <ul className="space-y-2 ">
             <li>
               <a href="/AboutUs" className="hover:text-gray-300">
@@ -75,28 +75,28 @@ const Footer = () => {
                 FAQ's
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="https://www.durgeshprasad.co"
                 className="hover:text-gray-300"
               >
                 Developer
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
         {/* Services */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <h3 className="text-white text-md font-extrabold">Location</h3>
           <ul className="space-y-2">
             <p>Prayagraj, UP</p>{" "}
           </ul>
-        </div>
+        </div> */}
 
         {/* Newsletter */}
         <div className="space-y-0  lg:text-start ">
-          <h3 className="text-white text-md font-extrabold">
+          <h3 className="text-white text-md font-bold">
             Subscribe to our Newsletter
           </h3>
           <form className="flex flex-col space-y-2">
@@ -117,11 +117,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" flex  justify-center items-center  gap-1 p-2 mt-8">
+      <div className=" flex md:flex-row flex-col  justify-center items-center  gap-1 p-2 mt-8">
         {/* © {new Date().getFullYear()} Kuli. <br></br> */}
-        <p className="lg:text-[1.2em] font-bold"> Designed & Developed by:</p>
+        <p className="lg:text-[1.0em]  text-sm font-normal"> Designed & Developed by : </p>
         <a
-          href="https://skillancer.in"
+          href="https://skillancer.in/durgeshprasad"
           target="blank"
           className="hover:text-white"
         >

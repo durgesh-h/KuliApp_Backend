@@ -101,7 +101,7 @@ const PNRComponents = () => {
   };
 
   return (
-    <div id="PNR" className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg shadow-lg p-4 w-full">
+    <div id="PNR" className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg p-4 w-full">
       {/* Radio buttons for selecting search type */}
       <div className="flex mb-0 justify-center text-center p-4 lg:px-32 lg:space-x-12">
         <label className="mr-4">

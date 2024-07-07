@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from '../../assets/logo.png';
@@ -10,14 +10,37 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home'); // Default active link
 
+  // Toggle menu open/close
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Handle navigation link click
   const handleNavLinkClick = (link) => {
     setActiveLink(link);
     setIsOpen(false); // Close the menu if a link is clicked
   };
+
+  // Close the menu if clicked outside
+  const handleClickOutside = (event) => {
+    if (!event.target.closest('.navbar')) {
+      setIsOpen(false);
+    }
+  };
+
+  // Add or remove event listener based on the menu state
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    // Cleanup event listener when component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const links = [
     { name: 'Home', href: 'https://kuli.live' },
@@ -27,7 +50,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black text-white p-4">
+    <nav className="navbar bg-black text-white p-4">
       <div className="container mx-auto lg:text-md md:text-sm flex justify-between items-center px-0 sm:px-6">
         {/* Links */}
         <div className="hidden md:flex space-x-4">
@@ -52,11 +75,11 @@ const Navbar = () => {
 
         {/* Social Media Links */}
         <div className="hidden md:flex text-lg space-x-4 ml-36">
-            <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
-            <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
-            <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
-            <a href="https://x.com/kuli_india">  <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5"/></a>
-   </div>
+          <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
+          <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
+          <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
+          <a href="https://x.com/kuli_india"> <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5" /></a>
+        </div>
 
         {/* Hamburger Button */}
         <div className="md:hidden" onClick={toggleMenu}>
@@ -82,11 +105,11 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex space-x-4">
-          <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61555889204274"> <FaFacebookF className="hover:text-red transition-all duration-300" /></a>
             <a href="https://www.instagram.com/kuli_india/"> <FaInstagram className="hover:text-red transition-all duration-300" /></a>
             <a href="https://www.linkedin.com/company/kuliofficial/"> <FaLinkedinIn className="hover:text-red transition-all duration-300" /></a>
-            <a href="https://x.com/kuli_india">  <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5"/></a>
-       </div>
+            <a href="https://x.com/kuli_india"> <FontAwesomeIcon icon={faXTwitter} className="hover:text-red transition-all duration-300 w-4 flex h-5" /></a>
+          </div>
         </div>
       )}
     </nav>
